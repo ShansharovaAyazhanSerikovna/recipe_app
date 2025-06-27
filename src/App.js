@@ -1,24 +1,30 @@
-import ChiefSection from "./components/ChiefSection";
+import { Route, Router, Routes } from "react-router-dom";
+
 import Footer from "./components/Footer";
-import Herosection from "./components/Herosection";
 
 
 
 import Navbar from "./components/Navbar";
-import QuoteSection from "./components/QuoteSection";
-import SkillsImprove from "./components/SkillsImprove";
+import Home from "./components/pages/Home";
+
+
+import Settings from "./components/pages/Settings";
+import Recipes from "./components/pages/Recipes";
 
 
 
 function App() {
   return (
-    <div className="App">
-      {/* <Navbar/> */}
+    
+      <div className="App">
+      <Navbar/> 
       <div className="container main">
-        <Herosection/>
-        <SkillsImprove/>
-        <QuoteSection/>
-        <ChiefSection/>
+        <Routes>
+          <Route path="/" element = {<Home/>}/>
+          <Route path="/settings" element = {<Settings/>}/>
+          <Route path="/recipes" element = {<Recipes/>}/>
+        </Routes>
+    
        
         
        
@@ -27,6 +33,9 @@ function App() {
 
  
     </div>
+
+  
+    
   );
 }
 
